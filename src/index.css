@@ -1,13 +1,109 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* FONTS */
+@font-face {
+  font-family: 'Cooper BT';
+  src: url('./fonts/CooperBT.ttf') format('truetype');
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: 'The Seasons';
+  src: url('./fonts/TheSeasons.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'CooperMdBT';
+  src: url('./fonts/CooperMdBT-Regular.ttf') format('truetype');
+}
+
+/*
+@layer base {
+  body {
+    @apply bg-background text-subtext font-subtext;
+  }
+} */
+
+/* SIZES */
+.text-lg {
+  font-size: 1.125rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+}
+
+.text-5xl {
+  font-size: 3rem;
+}
+
+/* FONTS */
+
+.title-font {
+  font-family: 'The Seasons', serif;
+}
+
+.body-text {
+  font-family: 'Cooper BT', serif;
+}
+
+.body-text-bold {
+  font-family: 'CooperMdBT', sans-serif;
+}
+
+/* COLOURS */
+.bg-background {
+  background-color: #1E1F22;
+}
+
+.text-primary {
+  color: #65B6DD;
+}
+
+.text-subtext {
+  color: #D5FCFD;
+}
+
+/* OTHER FEATURES */
+
+.twitter-link {
+  @apply body-text-bold no-underline relative;
+  transition: color 0.3s ease;
+}
+
+.twitter-link:hover {
+  color: #E75577;
+}
+
+.twitter-link::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: #E75577;
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  transition: transform 0.3s ease;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.twitter-link:hover::after {
+  transform: scaleX(1);
 }
