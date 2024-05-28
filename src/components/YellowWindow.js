@@ -1,25 +1,27 @@
 import React from 'react';
 
 const YellowWindow = () => (
-    <div className="bg-yellow-500 p-4 rounded-lg border-8 border-white w-[160%] h-[78%]">
-        <h2 className="text-black title-font text-center text-3xl">Intraoral Interfaces</h2>
-        <div className="embed-responsive embed-responsive-16by9 mt-2">
+    <div className="bg-yellow-500 p-4 rounded-lg border-2 border-white w-full h-full">
+        <h2 className="text-black title-font text-2xl text-center">Intraoral Interfaces</h2>
+        <div className="embed-responsive embed-responsive-16by9">
             <iframe
-                className="embed-responsive-item"
+                className="embed-responsive-item w-full h-40 md:h-60 lg:h-72"
                 src="https://www.youtube.com/embed/dQw4w9WgXcQ"
                 allowFullScreen
-                style={{ width: '100%', height: '200px' }}
             ></iframe>
         </div>
-        <p className="text-black body-text text-lg mt-2">Project One liner: Controlling my computer with my tongue</p>
-        <a href="https://github.com/rpandya5" target="_blank" rel="noopener noreferrer" className="text-black body-text-bold text-base mt-2 block text-center">
+        <p className="body-text mt-4 text-black text-center">Project One liner: Controlling my computer with my tongue</p>
+        <a
+            href="https://github.com/rpandya5"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-black body-text-bold text-center block"
+        >
             Github
         </a>
-        <div className="flex justify-center mt-2">
-            <button className="bg-white text-black border border-black py-0.8 px-4 rounded-full body-text-bold text-lg">
-                Here's how I did it!
-            </button>
-        </div>
+        <button className="mt-4 bg-white text-black border border-black py-1 px-2 rounded-full mx-auto block">
+            Here's how I did it!
+        </button>
     </div>
 );
 

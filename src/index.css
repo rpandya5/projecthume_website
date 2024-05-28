@@ -129,9 +129,53 @@
 
 /* HUMAN FIGURE */
 .human-figure {
-  max-width: 70%;
-  /* Adjust this value to make the image smaller */
+  max-width: 50%;
+  height: auto;
 }
+
+.window-content {
+  overflow: auto;
+  max-height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media (min-width: 640px) {
+  .popup-window {
+    width: 80%;
+    height: 70%;
+  }
+}
+
+@media (min-width: 768px) {
+  .popup-window {
+    width: 60%;
+    height: 60%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .popup-window {
+    width: 50%;
+    height: 50%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .popup-window {
+    width: 40%;
+    height: 40%;
+  }
+}
+
+@media (min-width: 1536px) {
+  .popup-window {
+    width: 30%;
+    height: 30%;
+  }
+}
+
 
 /* HOVERING WINDOWS */
 
@@ -175,4 +219,342 @@
   top: 350px;
   right: 50%;
   transform: translateX(50%);
+}
+
+/* General adjustments for mobile */
+header {
+  justify-content: flex-start;
+  /* Ensures content starts at the top */
+  align-items: flex-start;
+  /* Align items to the start */
+}
+
+nav {
+  margin-top: -3rem;
+  /* Adjust this value to increase/decrease space from the top for mobile */
+}
+
+.human-figure-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  /* Ensure the container takes the full width on mobile */
+  text-align: center;
+  /* Center the content inside the container */
+}
+
+.human-figure {
+  max-width: 50%;
+  height: auto;
+}
+
+@media (max-width: 640px) {
+
+  /* Targeting mobile devices */
+  .human-figure {
+    max-width: 140%;
+    /* Adjust this value to control the width of the image */
+    height: auto;
+    /* Maintain aspect ratio */
+    margin: 0rem auto;
+    /* Center the image and add margin for spacing */
+    display: block;
+    /* Center the image */
+  }
+}
+
+/* General circle styles */
+.circle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.circle-pink {
+  background-color: pink;
+}
+
+.circle-green {
+  background-color: green;
+}
+
+.circle-orange {
+  background-color: orange;
+}
+
+.circle-red {
+  background-color: red;
+}
+
+.circle-purple {
+  background-color: purple;
+}
+
+.circle-blue {
+  background-color: blue;
+}
+
+.circle-yellow {
+  background-color: yellow;
+}
+
+/* Circle placement for mobile */
+@media (max-width: 640px) {
+  .circle-pink {
+    top: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .circle-green {
+    top: 13%;
+    left: 35%;
+    transform: translateX(-50%);
+  }
+
+  .circle-orange {
+    top: 13%;
+    left: 65%;
+    transform: translateX(-50%);
+  }
+
+  .circle-red {
+    top: 25%;
+    left: 21%;
+    transform: translateX(-50%);
+  }
+
+  .circle-purple {
+    top: 25%;
+    left: 79%;
+    transform: translateX(-50%);
+  }
+
+  .circle-blue {
+    top: 40%;
+    left: 13%;
+    transform: translateX(-50%);
+  }
+
+  .circle-yellow {
+    top: 40%;
+    left: 87%;
+    transform: translateX(-50%);
+  }
+}
+
+/* Additional CSS for desktop-specific styling */
+@media (min-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    /* Ensures content starts at the top */
+  }
+
+  nav {
+    order: 1;
+    margin-bottom: 8rem;
+    /* Ensures space between Twitter Updates and Project Hume */
+    align-self: flex-end;
+    margin-top: -4rem;
+    /* Adjust this value to increase/decrease space from the top */
+  }
+
+  h1 {
+    order: 2;
+    /* Ensure Project Hume comes after Twitter Updates */
+    padding-left: 4rem;
+    /* Adjust as needed */
+    align-self: flex-start;
+    /* Aligns Project Hume with the content below */
+  }
+
+  main {
+    padding-left: 4rem;
+    /* Adjust as needed */
+  }
+
+  .human-figure {
+    max-width: 50%;
+    /* Ensure the image does not exceed 50% of the container width */
+    margin: 0;
+    /* Reset margin for desktop */
+  }
+
+  /* Circle placement for desktop */
+  .circle-pink {
+    top: 4%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .circle-green {
+    top: 18%;
+    left: 40%;
+    transform: translateX(-50%);
+  }
+
+  .circle-orange {
+    top: 18%;
+    left: 60%;
+    transform: translateX(-50%);
+  }
+
+  .circle-red {
+    top: 29%;
+    left: 37%;
+    transform: translateX(-50%);
+  }
+
+  .circle-purple {
+    top: 29%;
+    left: 63%;
+    transform: translateX(-50%);
+  }
+
+  .circle-blue {
+    top: 42%;
+    left: 35%;
+    transform: translateX(-50%);
+  }
+
+  .circle-yellow {
+    top: 42%;
+    left: 65%;
+    transform: translateX(-50%);
+  }
+}
+
+/* Area styles for mobile */
+@media (max-width: 640px) {
+  .area-pink {
+    top: 0%;
+    left: 42%;
+    width: 16%;
+    height: 9%;
+    background-color: rgba(255, 192, 203, 0.3);
+    /* Pink transparent overlay */
+  }
+
+  .area-green {
+    top: 10%;
+    left: 27%;
+    width: 20%;
+    height: 7%;
+    background-color: rgba(0, 128, 0, 0.3);
+    /* Green transparent overlay */
+  }
+
+  .area-orange {
+    top: 10%;
+    left: 53%;
+    width: 20%;
+    height: 7%;
+    background-color: rgba(255, 165, 0, 0.3);
+    /* Orange transparent overlay */
+  }
+
+  .area-red {
+    top: 22%;
+    left: 12%;
+    width: 20%;
+    height: 7%;
+    background-color: rgba(255, 0, 0, 0.3);
+    /* Red transparent overlay */
+  }
+
+  .area-purple {
+    top: 22%;
+    left: 68%;
+    width: 20%;
+    height: 7%;
+    background-color: rgba(128, 0, 128, 0.3);
+    /* Purple transparent overlay */
+  }
+
+  .area-blue {
+    top: 37%;
+    left: 4%;
+    width: 20%;
+    height: 7%;
+    background-color: rgba(0, 0, 255, 0.3);
+    /* Blue transparent overlay */
+  }
+
+  .area-yellow {
+    top: 37%;
+    left: 76%;
+    width: 20%;
+    height: 7%;
+    background-color: rgba(255, 255, 0, 0.3);
+    /* Yellow transparent overlay */
+  }
+}
+
+/* Area styles for desktop */
+@media (min-width: 641px) {
+  .area-pink {
+    top: -2%;
+    left: 42%;
+    width: 16%;
+    height: 16%;
+    background-color: rgba(255, 192, 203, 0.3);
+    /* Pink transparent overlay */
+  }
+
+  .area-green {
+    top: 14%;
+    left: 32%;
+    width: 15%;
+    height: 11%;
+    background-color: rgba(0, 128, 0, 0.3);
+    /* Green transparent overlay */
+  }
+
+  .area-orange {
+    top: 14%;
+    left: 53%;
+    width: 15%;
+    height: 11%;
+    background-color: rgba(255, 165, 0, 0.3);
+    /* Orange transparent overlay */
+  }
+
+  .area-red {
+    top: 25%;
+    left: 31%;
+    width: 16%;
+    height: 11%;
+    background-color: rgba(255, 0, 0, 0.3);
+    /* Red transparent overlay */
+  }
+
+  .area-purple {
+    top: 25%;
+    left: 53%;
+    width: 16%;
+    height: 11%;
+    background-color: rgba(128, 0, 128, 0.3);
+    /* Purple transparent overlay */
+  }
+
+  .area-blue {
+    top: 36%;
+    left: 30%;
+    width: 17%;
+    height: 11%;
+    background-color: rgba(0, 0, 255, 0.3);
+    /* Blue transparent overlay */
+  }
+
+  .area-yellow {
+    top: 36%;
+    left: 53%;
+    width: 17%;
+    height: 11%;
+    background-color: rgba(255, 255, 0, 0.3);
+    /* Yellow transparent overlay */
+  }
 }
