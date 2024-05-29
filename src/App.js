@@ -110,6 +110,20 @@ function App() {
         </p>
         <div className="mt-16 flex justify-center relative">
           <img src={humanFigure} alt="Human Figure" className="human-figure" />
+          <div className="popup-window-container">
+            {hoveredArea && (
+              <div
+                className={`popup-window popup-window-${hoveredArea} popup-window-custom`}
+                onMouseEnter={() => setIsWindowHovered(true)}
+                onMouseLeave={() => {
+                  setIsWindowHovered(false);
+                  handleMouseLeave();
+                }}
+              >
+                {renderWindow()}
+              </div>
+            )}
+          </div>
           {areas.map((area, index) => (
             <div
               key={index}
@@ -118,32 +132,8 @@ function App() {
               onMouseLeave={() => handleMouseLeave()}
             ></div>
           ))}
-          {hoveredArea && (
-            <div
-              className={`absolute bg-${hoveredArea}-500 bg-opacity-75 w-72 md:w-96 h-96 md:h-auto`}
-              style={{
-                top: areas.find(area => area.color === hoveredArea).windowTop,
-                left: areas.find(area => area.color === hoveredArea).windowLeft,
-                transform: 'translate(-50%, -50%)',
-                color: 'white',
-                padding: '10px',
-                borderRadius: '5px',
-                pointerEvents: 'auto', // Allow pointer events on the window
-              }}
-              onMouseEnter={() => setIsWindowHovered(true)}
-              onMouseLeave={() => {
-                setIsWindowHovered(false);
-                handleMouseLeave();
-              }}
-            >
-              {renderWindow()}
-            </div>
-          )}
           {circles.map((circle, index) => (
-            <div
-              key={index}
-              className={`circle ${circle.className}`}
-            ></div>
+            <div key={index} className={`circle ${circle.className}`}></div>
           ))}
         </div>
       </main>

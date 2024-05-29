@@ -4,24 +4,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-.human-figure-container {
-  position: relative;
-  display: inline-block;
+html,
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
-
-.human-figure-grid {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.2) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
-  background-size: 20px 20px;
-  /* Adjust the grid size as needed */
-  pointer-events: none;
-}
-
 
 /* FONTS */
 @font-face {
@@ -38,13 +26,6 @@
   font-family: 'CooperMdBT';
   src: url('./fonts/CooperMdBT-Regular.ttf') format('truetype');
 }
-
-/*
-@layer base {
-  body {
-    @apply bg-background text-subtext font-subtext;
-  }
-} */
 
 /* SIZES */
 .text-lg {
@@ -72,7 +53,6 @@
 }
 
 /* FONTS */
-
 .title-font {
   font-family: 'The Seasons', serif;
 }
@@ -99,7 +79,6 @@
 }
 
 /* NAVIGATION BAR */
-
 .twitter-link {
   @apply body-text-bold no-underline relative;
   transition: color 0.3s ease;
@@ -133,114 +112,99 @@
   height: auto;
 }
 
-.window-content {
-  overflow: auto;
-  max-height: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-@media (min-width: 640px) {
-  .popup-window {
-    width: 80%;
-    height: 70%;
-  }
-}
-
-@media (min-width: 768px) {
-  .popup-window {
-    width: 60%;
-    height: 60%;
-  }
-}
-
-@media (min-width: 1024px) {
-  .popup-window {
-    width: 50%;
-    height: 50%;
-  }
-}
-
-@media (min-width: 1280px) {
-  .popup-window {
-    width: 40%;
-    height: 40%;
-  }
-}
-
-@media (min-width: 1536px) {
-  .popup-window {
-    width: 30%;
-    height: 30%;
-  }
-}
-
-
-/* HOVERING WINDOWS */
-
-.pink-window {
-  top: 50px;
+/* Pop-up Window Container */
+.popup-window-container {
+  position: absolute;
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
 }
 
-.green-window {
-  top: 150px;
-  left: 50%;
+/* Pop-up Window */
+.popup-window {
+  position: absolute;
   transform: translateX(-50%);
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  border: 4px solid white;
+  pointer-events: auto;
+  width: calc(100vw - 40px);
+  max-width: 600px;
+  height: auto;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-sizing: border-box;
 }
 
-.red-window {
-  top: 250px;
-  left: 50%;
-  transform: translateX(-50%);
+/* Specific Positioning for Each Window */
+.popup-window-pink {
+  top: -10%;
+  left: 65%;
 }
 
-.blue-window {
-  top: 350px;
-  left: 50%;
-  transform: translateX(-50%);
+.popup-window-green {
+  top: 0;
+  left: 3%;
 }
 
-.orange-window {
-  top: 150px;
-  right: 50%;
-  transform: translateX(50%);
+.popup-window-orange {
+  top: 0;
+  left: 70%;
 }
 
-.purple-window {
-  top: 250px;
-  right: 50%;
-  transform: translateX(50%);
+.popup-window-red {
+  top: 10%;
+  left: 3%;
 }
 
-.yellow-window {
-  top: 350px;
-  right: 50%;
-  transform: translateX(50%);
+.popup-window-purple {
+  top: 10%;
+  left: 70%;
+}
+
+.popup-window-blue {
+  top: 20%;
+  left: 3%;
+}
+
+.popup-window-yellow {
+  top: 20%;
+  left: 70%;
+}
+
+/* Specific Positioning for Each Area Window on Mobile */
+@media (max-width: 640px) {
+
+  .popup-window-pink,
+  .popup-window-green,
+  .popup-window-orange,
+  .popup-window-red,
+  .popup-window-purple,
+  .popup-window-blue,
+  .popup-window-yellow {
+    top: auto;
+    left: auto;
+    transform: translate(-50%, -50%);
+  }
 }
 
 /* General adjustments for mobile */
 header {
   justify-content: flex-start;
-  /* Ensures content starts at the top */
   align-items: flex-start;
-  /* Align items to the start */
 }
 
 nav {
   margin-top: -3rem;
-  /* Adjust this value to increase/decrease space from the top for mobile */
 }
 
 .human-figure-container {
   position: relative;
   display: inline-block;
   width: 100%;
-  /* Ensure the container takes the full width on mobile */
   text-align: center;
-  /* Center the content inside the container */
 }
 
 .human-figure {
@@ -249,17 +213,11 @@ nav {
 }
 
 @media (max-width: 640px) {
-
-  /* Targeting mobile devices */
   .human-figure {
     max-width: 140%;
-    /* Adjust this value to control the width of the image */
     height: auto;
-    /* Maintain aspect ratio */
     margin: 0rem auto;
-    /* Center the image and add margin for spacing */
     display: block;
-    /* Center the image */
   }
 }
 
@@ -350,78 +308,68 @@ nav {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    /* Ensures content starts at the top */
   }
 
   nav {
     order: 1;
     margin-bottom: 8rem;
-    /* Ensures space between Twitter Updates and Project Hume */
     align-self: flex-end;
     margin-top: -4rem;
-    /* Adjust this value to increase/decrease space from the top */
   }
 
   h1 {
     order: 2;
-    /* Ensure Project Hume comes after Twitter Updates */
     padding-left: 4rem;
-    /* Adjust as needed */
     align-self: flex-start;
-    /* Aligns Project Hume with the content below */
   }
 
   main {
     padding-left: 4rem;
-    /* Adjust as needed */
   }
 
   .human-figure {
     max-width: 50%;
-    /* Ensure the image does not exceed 50% of the container width */
-    margin: 0;
-    /* Reset margin for desktop */
+    margin-top: -90px;
   }
 
-  /* Circle placement for desktop */
   .circle-pink {
-    top: 4%;
+    top: -5%;
     left: 50%;
     transform: translateX(-50%);
   }
 
   .circle-green {
-    top: 18%;
+    top: 9%;
     left: 40%;
     transform: translateX(-50%);
   }
 
   .circle-orange {
-    top: 18%;
+    top: 9%;
     left: 60%;
     transform: translateX(-50%);
   }
 
   .circle-red {
-    top: 29%;
+    top: 20%;
     left: 37%;
     transform: translateX(-50%);
   }
 
   .circle-purple {
-    top: 29%;
+    top: 20%;
     left: 63%;
     transform: translateX(-50%);
   }
 
   .circle-blue {
-    top: 42%;
+    top: 33%;
     left: 35%;
     transform: translateX(-50%);
   }
 
   .circle-yellow {
-    top: 42%;
+    top: 33%;
     left: 65%;
     transform: translateX(-50%);
   }
@@ -435,7 +383,6 @@ nav {
     width: 16%;
     height: 9%;
     background-color: rgba(255, 192, 203, 0.3);
-    /* Pink transparent overlay */
   }
 
   .area-green {
@@ -444,7 +391,6 @@ nav {
     width: 20%;
     height: 7%;
     background-color: rgba(0, 128, 0, 0.3);
-    /* Green transparent overlay */
   }
 
   .area-orange {
@@ -453,7 +399,6 @@ nav {
     width: 20%;
     height: 7%;
     background-color: rgba(255, 165, 0, 0.3);
-    /* Orange transparent overlay */
   }
 
   .area-red {
@@ -462,7 +407,6 @@ nav {
     width: 20%;
     height: 7%;
     background-color: rgba(255, 0, 0, 0.3);
-    /* Red transparent overlay */
   }
 
   .area-purple {
@@ -471,7 +415,6 @@ nav {
     width: 20%;
     height: 7%;
     background-color: rgba(128, 0, 128, 0.3);
-    /* Purple transparent overlay */
   }
 
   .area-blue {
@@ -480,7 +423,6 @@ nav {
     width: 20%;
     height: 7%;
     background-color: rgba(0, 0, 255, 0.3);
-    /* Blue transparent overlay */
   }
 
   .area-yellow {
@@ -489,72 +431,127 @@ nav {
     width: 20%;
     height: 7%;
     background-color: rgba(255, 255, 0, 0.3);
-    /* Yellow transparent overlay */
   }
 }
 
 /* Area styles for desktop */
 @media (min-width: 641px) {
   .area-pink {
-    top: -2%;
+    top: -8%;
     left: 42%;
-    width: 16%;
-    height: 16%;
+    width: 22%;
+    height: 13%;
     background-color: rgba(255, 192, 203, 0.3);
-    /* Pink transparent overlay */
   }
 
   .area-green {
-    top: 14%;
+    top: 5%;
     left: 32%;
     width: 15%;
     height: 11%;
     background-color: rgba(0, 128, 0, 0.3);
-    /* Green transparent overlay */
   }
 
   .area-orange {
-    top: 14%;
+    top: 5%;
     left: 53%;
     width: 15%;
     height: 11%;
     background-color: rgba(255, 165, 0, 0.3);
-    /* Orange transparent overlay */
   }
 
   .area-red {
-    top: 25%;
+    top: 16%;
     left: 31%;
     width: 16%;
     height: 11%;
     background-color: rgba(255, 0, 0, 0.3);
-    /* Red transparent overlay */
   }
 
   .area-purple {
-    top: 25%;
+    top: 16%;
     left: 53%;
     width: 16%;
     height: 11%;
     background-color: rgba(128, 0, 128, 0.3);
-    /* Purple transparent overlay */
   }
 
   .area-blue {
-    top: 36%;
+    top: 27%;
     left: 30%;
     width: 17%;
     height: 11%;
     background-color: rgba(0, 0, 255, 0.3);
-    /* Blue transparent overlay */
   }
 
   .area-yellow {
-    top: 36%;
+    top: 27%;
     left: 53%;
     width: 17%;
     height: 11%;
     background-color: rgba(255, 255, 0, 0.3);
-    /* Yellow transparent overlay */
+  }
+}
+
+/* YouTube video responsive styling */
+.embed-responsive {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+}
+
+.embed-responsive::before {
+  content: "";
+  display: block;
+  padding-top: 56.25%;
+}
+
+.embed-responsive-16by9 iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Custom styles for the pop-up window */
+.popup-window-custom {
+  width: 80%;
+  height: auto;
+  background-color: white;
+  /* Opaque pink background */
+  border: 4px solid white;
+  /* White border */
+  box-sizing: border-box;
+  /* Ensure padding and border are included in the element's width and height */
+}
+
+@media (min-width: 768px) {
+  .popup-window-custom {
+    width: 70%;
+    height: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .popup-window-custom {
+    width: 60%;
+    height: auto;
+  }
+}
+
+@media (min-width: 1280px) {
+  .popup-window-custom {
+    width: 50%;
+    height: auto;
+  }
+}
+
+@media (min-width: 1536px) {
+  .popup-window-custom {
+    width: 40%;
+    height: auto;
   }
 }
