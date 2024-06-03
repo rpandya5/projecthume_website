@@ -4,14 +4,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-html,
-body {
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
-}
-
-/* FONTS */
 @font-face {
   font-family: 'Cooper BT';
   src: url('./fonts/CooperBT.ttf') format('truetype');
@@ -27,7 +19,26 @@ body {
   src: url('./fonts/CooperMdBT-Regular.ttf') format('truetype');
 }
 
-/* SIZES */
+.title-font {
+  font-family: 'The Seasons', serif;
+}
+
+.body-text {
+  font-family: 'Cooper BT', serif;
+}
+
+.body-text-bold {
+  font-family: 'CooperMdBT', sans-serif;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* TEXT SIZES */
 .text-lg {
   font-size: 1.125rem;
 }
@@ -50,32 +61,6 @@ body {
 
 .text-5xl {
   font-size: 3rem;
-}
-
-/* FONTS */
-.title-font {
-  font-family: 'The Seasons', serif;
-}
-
-.body-text {
-  font-family: 'Cooper BT', serif;
-}
-
-.body-text-bold {
-  font-family: 'CooperMdBT', sans-serif;
-}
-
-/* COLOURS */
-.bg-background {
-  background-color: #1E1F22;
-}
-
-.text-primary {
-  color: #65B6DD;
-}
-
-.text-subtext {
-  color: #D5FCFD;
 }
 
 /* NAVIGATION BAR */
@@ -107,12 +92,27 @@ body {
 }
 
 /* HUMAN FIGURE */
+.human-figure-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
 .human-figure {
   max-width: 50%;
   height: auto;
 }
 
-/* Pop-up Window Container */
+@media (max-width: 640px) {
+  .human-figure {
+    max-width: 140%;
+    height: auto;
+    margin: 0rem auto;
+    display: block;
+  }
+}
+
 .popup-window-container {
   position: absolute;
   top: 0;
@@ -122,23 +122,79 @@ body {
   height: 100%;
 }
 
-/* Pop-up Window */
 .popup-window {
   position: absolute;
   transform: translateX(-50%);
   color: white;
   padding: 10px;
-  border-radius: 10px;
-  border: 4px solid white;
   pointer-events: auto;
   width: calc(100vw - 40px);
   max-width: 600px;
   height: auto;
-  background-color: rgba(255, 255, 255, 0.9);
-  box-sizing: border-box;
+  background-color: transparent;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Specific Positioning for Each Window */
+.popup-window-container:hover .popup-window {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+.popup-window-large {
+  max-width: 80%;
+  height: auto;
+}
+
+@media (max-width: 640px) {
+  .popup-window-large {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .popup-window-large {
+    max-width: 70%;
+  }
+
+  .popup-window-custom {
+    width: 40%;
+    height: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .popup-window-large {
+    max-width: 60%;
+  }
+
+  .popup-window-custom {
+    width: 30%;
+    height: auto;
+  }
+}
+
+@media (min-width: 1280px) {
+  .popup-window-large {
+    max-width: 50%;
+  }
+
+  .popup-window-custom {
+    width: 25%;
+    height: auto;
+  }
+}
+
+@media (min-width: 1536px) {
+  .popup-window-large {
+    max-width: 40%;
+  }
+
+  .popup-window-custom {
+    width: 20%;
+    height: auto;
+  }
+}
+
 .popup-window-pink {
   top: -10%;
   left: 65%;
@@ -174,7 +230,6 @@ body {
   left: 70%;
 }
 
-/* Specific Positioning for Each Area Window on Mobile */
 @media (max-width: 640px) {
 
   .popup-window-pink,
@@ -190,38 +245,7 @@ body {
   }
 }
 
-/* General adjustments for mobile */
-header {
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-
-nav {
-  margin-top: -3rem;
-}
-
-.human-figure-container {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-  text-align: center;
-}
-
-.human-figure {
-  max-width: 50%;
-  height: auto;
-}
-
-@media (max-width: 640px) {
-  .human-figure {
-    max-width: 140%;
-    height: auto;
-    margin: 0rem auto;
-    display: block;
-  }
-}
-
-/* General circle styles */
+/* CIRCLE */
 .circle {
   position: absolute;
   width: 10px;
@@ -257,7 +281,6 @@ nav {
   background-color: yellow;
 }
 
-/* Circle placement for mobile */
 @media (max-width: 640px) {
   .circle-pink {
     top: 3%;
@@ -302,36 +325,7 @@ nav {
   }
 }
 
-/* Additional CSS for desktop-specific styling */
 @media (min-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-  }
-
-  nav {
-    order: 1;
-    margin-bottom: 8rem;
-    align-self: flex-end;
-    margin-top: -4rem;
-  }
-
-  h1 {
-    order: 2;
-    padding-left: 4rem;
-    align-self: flex-start;
-  }
-
-  main {
-    padding-left: 4rem;
-  }
-
-  .human-figure {
-    max-width: 50%;
-    margin-top: -90px;
-  }
-
   .circle-pink {
     top: -5%;
     left: 50%;
@@ -375,7 +369,7 @@ nav {
   }
 }
 
-/* Area styles for mobile */
+/* AREAS */
 @media (max-width: 640px) {
   .area-pink {
     top: 0%;
@@ -434,7 +428,6 @@ nav {
   }
 }
 
-/* Area styles for desktop */
 @media (min-width: 641px) {
   .area-pink {
     top: -8%;
@@ -493,6 +486,84 @@ nav {
   }
 }
 
+/* buttons */
+.learn-more-btn {
+  font-family: 'Cooper BT', serif;
+  font-size: 1.25rem;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.learn-more-btn:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.05);
+}
+
+.learn-more-btn::before,
+.learn-more-btn::after {
+  content: "";
+  position: absolute;
+  border: 1px solid black;
+}
+
+.learn-more-btn::before {
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+}
+
+.learn-more-btn::after {
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+}
+
+/* OTHER */
+/* General adjustments for mobile */
+header {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+nav {
+  margin-top: -3rem;
+}
+
+@media (min-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  nav {
+    order: 1;
+    margin-bottom: 8rem;
+    align-self: flex-end;
+    margin-top: -4rem;
+  }
+
+  h1 {
+    order: 2;
+    padding-left: 4rem;
+    align-self: flex-start;
+  }
+
+  main {
+    padding-left: 4rem;
+  }
+
+  .human-figure {
+    margin-top: -90px;
+  }
+}
+
 /* YouTube video responsive styling */
 .embed-responsive {
   position: relative;
@@ -514,44 +585,13 @@ nav {
   left: 0;
   width: 100%;
   height: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Custom styles for the pop-up window */
-.popup-window-custom {
-  width: 80%;
-  height: auto;
+.area {
+  transition: background-color 0.3s ease;
+}
+
+.area:hover {
   background-color: white;
-  /* Opaque pink background */
-  border: 4px solid white;
-  /* White border */
-  box-sizing: border-box;
-  /* Ensure padding and border are included in the element's width and height */
-}
-
-@media (min-width: 768px) {
-  .popup-window-custom {
-    width: 70%;
-    height: auto;
-  }
-}
-
-@media (min-width: 1024px) {
-  .popup-window-custom {
-    width: 60%;
-    height: auto;
-  }
-}
-
-@media (min-width: 1280px) {
-  .popup-window-custom {
-    width: 50%;
-    height: auto;
-  }
-}
-
-@media (min-width: 1536px) {
-  .popup-window-custom {
-    width: 40%;
-    height: auto;
-  }
 }

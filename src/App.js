@@ -39,21 +39,22 @@ function App() {
       case 'pink':
         return <PinkWindow />;
       case 'green':
-        return <GreenWindow />;
-      case 'orange':
-        return <OrangeWindow />;
-      case 'red':
-        return <RedWindow />;
-      case 'purple':
-        return <PurpleWindow />;
-      case 'blue':
-        return <BlueWindow />;
-      case 'yellow':
-        return <YellowWindow />;
+      return <GreenWindow />;
+    case 'orange':
+      return <OrangeWindow />;
+    case 'red':
+      return <RedWindow />;
+    case 'purple':
+      return <PurpleWindow />;
+    case 'blue':
+      return <BlueWindow />;
+    case 'yellow':
+      return <YellowWindow />;
       default:
         return null;
     }
   };
+  
 
   const handleMouseEnter = (color) => {
     setHoveredArea(color);

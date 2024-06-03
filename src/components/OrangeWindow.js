@@ -1,7 +1,7 @@
 import React from 'react';
 
 const OrangeWindow = () => (
-    <div className="bg-orange-500 p-4 rounded-lg border-2 border-white w-full h-full">
+    <div className="bg-orange-500 p-4 rounded-lg border-8 border-white w-full h-full">
         <h2 className="text-black title-font text-2xl text-center">Intraoral Interfaces</h2>
         <div className="embed-responsive embed-responsive-16by9">
             <iframe
@@ -26,3 +26,19 @@ const OrangeWindow = () => (
 );
 
 export default OrangeWindow;
+
+/* INCOMPLETE PROJECT CODE 
+
+import React from 'react';
+
+const PinkWindow = () => (
+    <div className="bg-pink-500 p-2 rounded-lg border-8 border-white shadow-lg">
+        <div className="bg-pink-500 p-2 rounded-lg pink-window-content">
+            <h2 className="text-black title-font text-xl text-center pink-window-title">Intraoral Interfaces</h2>
+            <p className="body-text mt-2 text-black text-center pink-window-text">This one's still cooking...</p>
+        </div>
+    </div>
+);
+
+export default PinkWindow;
+*/
