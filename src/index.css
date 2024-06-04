@@ -195,39 +195,47 @@ body {
   }
 }
 
+/* Specific Popup Window Positioning */
 .popup-window-pink {
-  top: -10%;
-  left: 65%;
+  top: -5%;
+  left: 70%;
+  transform: translate(-50%, -50%);
 }
 
 .popup-window-green {
-  top: 0;
-  left: 3%;
+  top: 10%;
+  left: 22%;
+  transform: translate(-50%, -50%);
 }
 
 .popup-window-orange {
-  top: 0;
-  left: 70%;
+  top: 10%;
+  left: 78%;
+  transform: translate(-50%, -50%);
 }
 
 .popup-window-red {
-  top: 10%;
-  left: 3%;
+  top: 22%;
+  left: 20%;
+  transform: translate(-50%, -50%);
 }
 
 .popup-window-purple {
-  top: 10%;
-  left: 70%;
+  top: 22%;
+  left: 80%;
+  transform: translate(-50%, -50%);
 }
 
 .popup-window-blue {
-  top: 20%;
-  left: 3%;
+  top: 38%;
+  left: 21%;
+  transform: translate(-50%, -50%);
 }
 
 .popup-window-yellow {
-  top: 20%;
-  left: 70%;
+  top: 38%;
+  left: 79%;
+  transform: translate(-50%, -50%);
 }
 
 @media (max-width: 640px) {
@@ -239,8 +247,8 @@ body {
   .popup-window-purple,
   .popup-window-blue,
   .popup-window-yellow {
-    top: auto;
-    left: auto;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
   }
 }
@@ -254,31 +262,31 @@ body {
 }
 
 .circle-pink {
-  background-color: pink;
+  background-color: rgb(242, 150, 185);
 }
 
 .circle-green {
-  background-color: green;
+  background-color: rgb(131, 209, 205);
 }
 
 .circle-orange {
-  background-color: orange;
+  background-color: rgb(242, 123, 24);
 }
 
 .circle-red {
-  background-color: red;
+  background-color: rgb(173, 66, 68);
 }
 
 .circle-purple {
-  background-color: purple;
+  background-color: rgb(161, 184, 248);
 }
 
 .circle-blue {
-  background-color: blue;
+  background-color: rgb(101, 182, 221);
 }
 
 .circle-yellow {
-  background-color: yellow;
+  background-color: rgb(255, 203, 95);
 }
 
 @media (max-width: 640px) {
@@ -376,7 +384,7 @@ body {
     left: 42%;
     width: 16%;
     height: 9%;
-    background-color: rgba(255, 192, 203, 0.3);
+    background-color: transparent;
   }
 
   .area-green {
@@ -384,7 +392,7 @@ body {
     left: 27%;
     width: 20%;
     height: 7%;
-    background-color: rgba(0, 128, 0, 0.3);
+    background-color: transparent;
   }
 
   .area-orange {
@@ -392,7 +400,7 @@ body {
     left: 53%;
     width: 20%;
     height: 7%;
-    background-color: rgba(255, 165, 0, 0.3);
+    background-color: transparent;
   }
 
   .area-red {
@@ -400,7 +408,7 @@ body {
     left: 12%;
     width: 20%;
     height: 7%;
-    background-color: rgba(255, 0, 0, 0.3);
+    background-color: transparent;
   }
 
   .area-purple {
@@ -408,7 +416,7 @@ body {
     left: 68%;
     width: 20%;
     height: 7%;
-    background-color: rgba(128, 0, 128, 0.3);
+    background-color: transparent;
   }
 
   .area-blue {
@@ -416,7 +424,7 @@ body {
     left: 4%;
     width: 20%;
     height: 7%;
-    background-color: rgba(0, 0, 255, 0.3);
+    background-color: transparent;
   }
 
   .area-yellow {
@@ -424,7 +432,7 @@ body {
     left: 76%;
     width: 20%;
     height: 7%;
-    background-color: rgba(255, 255, 0, 0.3);
+    background-color: transparent;
   }
 }
 
@@ -434,7 +442,7 @@ body {
     left: 42%;
     width: 22%;
     height: 13%;
-    background-color: rgba(255, 192, 203, 0.3);
+    background-color: transparent;
   }
 
   .area-green {
@@ -442,7 +450,7 @@ body {
     left: 32%;
     width: 15%;
     height: 11%;
-    background-color: rgba(0, 128, 0, 0.3);
+    background-color: transparent;
   }
 
   .area-orange {
@@ -450,7 +458,7 @@ body {
     left: 53%;
     width: 15%;
     height: 11%;
-    background-color: rgba(255, 165, 0, 0.3);
+    background-color: transparent;
   }
 
   .area-red {
@@ -458,7 +466,7 @@ body {
     left: 31%;
     width: 16%;
     height: 11%;
-    background-color: rgba(255, 0, 0, 0.3);
+    background-color: transparent;
   }
 
   .area-purple {
@@ -466,7 +474,7 @@ body {
     left: 53%;
     width: 16%;
     height: 11%;
-    background-color: rgba(128, 0, 128, 0.3);
+    background-color: transparent;
   }
 
   .area-blue {
@@ -474,7 +482,7 @@ body {
     left: 30%;
     width: 17%;
     height: 11%;
-    background-color: rgba(0, 0, 255, 0.3);
+    background-color: transparent;
   }
 
   .area-yellow {
@@ -482,7 +490,7 @@ body {
     left: 53%;
     width: 17%;
     height: 11%;
-    background-color: rgba(255, 255, 0, 0.3);
+    background-color: transparent;
   }
 }
 

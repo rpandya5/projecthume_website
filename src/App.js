@@ -39,22 +39,22 @@ function App() {
       case 'pink':
         return <PinkWindow />;
       case 'green':
-      return <GreenWindow />;
-    case 'orange':
-      return <OrangeWindow />;
-    case 'red':
-      return <RedWindow />;
-    case 'purple':
-      return <PurpleWindow />;
-    case 'blue':
-      return <BlueWindow />;
-    case 'yellow':
-      return <YellowWindow />;
+        return <GreenWindow />;
+      case 'orange':
+        return <OrangeWindow />;
+      case 'red':
+        return <RedWindow />;
+      case 'purple':
+        return <PurpleWindow />;
+      case 'blue':
+        return <BlueWindow />;
+      case 'yellow':
+        return <YellowWindow />;
       default:
         return null;
     }
   };
-  
+
 
   const handleMouseEnter = (color) => {
     setHoveredArea(color);
@@ -107,7 +107,7 @@ function App() {
           <span className="body-text-bold">Currently working on:</span> <span className="body-text">Visual interfaces</span>
         </p>
         <p className="text-lg md:text-xl">
-          <span className="body-text-bold">Last updated:</span> <span className="body-text">May 28, 2024</span>
+          <span className="body-text-bold">Last updated:</span> <span className="body-text">June 3, 2024</span>
         </p>
         <div className="mt-16 flex justify-center relative">
           <img src={humanFigure} alt="Human Figure" className="human-figure" />
