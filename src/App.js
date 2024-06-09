@@ -20,6 +20,7 @@ import { Typewriter } from 'react-simple-typewriter';
 function App() {
   const [hoveredArea, setHoveredArea] = useState(null);
   const [isWindowHovered, setIsWindowHovered] = useState(false);
+  const [isAreaHovered, setIsAreaHovered] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [currentSubpage, setCurrentSubpage] = useState(null);
 
@@ -42,6 +43,53 @@ function App() {
     { color: 'blue', className: 'circle-blue' },
     { color: 'yellow', className: 'circle-yellow' },
   ];
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 640);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (isAreaHovered || isWindowHovered) {
+      setHoveredArea(prev => prev); // Keep the current hovered area
+    } else {
+      setHoveredArea(null);
+    }
+  }, [isAreaHovered, isWindowHovered]);
+
+  const handleCircleClick = (color) => {
+    if (isMobile) {
+      setCurrentSubpage(color);
+    } else {
+      handleMouseEnterArea(color);
+    }
+  };
+
+  const handleExpand = (color) => {
+    setCurrentSubpage(color);
+  };
+
+  const handleMouseEnterArea = (color) => {
+    setIsAreaHovered(true);
+    setHoveredArea(color);
+  };
+
+  const handleMouseLeaveArea = () => {
+    setIsAreaHovered(false);
+  };
+
+  const handleMouseEnterWindow = () => {
+    setIsWindowHovered(true);
+  };
+
+  const handleMouseLeaveWindow = () => {
+    setIsWindowHovered(false);
+  };
 
   const renderWindow = () => {
     switch (hoveredArea) {
@@ -82,40 +130,6 @@ function App() {
         return <YellowSubpage onClose={() => setCurrentSubpage(null)} />;
       default:
         return null;
-    }
-  };
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 640);
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  const handleCircleClick = (color) => {
-    if (isMobile) {
-      setCurrentSubpage(color);
-    } else {
-      handleMouseEnter(color);
-    }
-  };
-
-  const handleExpand = (color) => {
-    setCurrentSubpage(color);
-  };
-
-  const handleMouseEnter = (color) => {
-    if (!isMobile) {
-      setHoveredArea(color);
-    }
-  };
-
-  const handleMouseLeave = () => {
-    if (!isMobile && !isWindowHovered) {
-      setHoveredArea(null);
     }
   };
 
@@ -170,14 +184,11 @@ function App() {
         <div className="mt-16 flex justify-center relative">
           <img src={humanFigure} alt="Human Figure" className="human-figure" />
           <div className="popup-window-container">
-            {hoveredArea && (
+            {hoveredArea && !isMobile && (
               <div
                 className={`popup-window popup-window-${hoveredArea} popup-window-custom`}
-                onMouseEnter={() => setIsWindowHovered(true)}
-                onMouseLeave={() => {
-                  setIsWindowHovered(false);
-                  handleMouseLeave();
-                }}
+                onMouseEnter={handleMouseEnterWindow}
+                onMouseLeave={handleMouseLeaveWindow}
               >
                 {renderWindow()}
               </div>
@@ -188,8 +199,8 @@ function App() {
               key={index}
               className={`absolute ${area.className}`}
               onClick={() => handleCircleClick(area.color)}
-              onMouseEnter={() => handleMouseEnter(area.color)}
-              onMouseLeave={() => handleMouseLeave()}
+              onMouseEnter={() => handleMouseEnterArea(area.color)}
+              onMouseLeave={handleMouseLeaveArea}
             ></div>
           ))}
           {circles.map((circle, index) => (

@@ -19,6 +19,11 @@
   src: url('./fonts/CooperMdBT-Regular.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'CooperLtBT-Italic';
+  src: url('./fonts/CooperLtBT-Italic.ttf') format('truetype');
+}
+
 .title-font {
   font-family: 'The Seasons', serif;
 }
@@ -124,7 +129,7 @@ body {
 
 .popup-window {
   position: absolute;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   color: white;
   padding: 10px;
   pointer-events: auto;
@@ -566,6 +571,28 @@ body {
   z-index: 1000;
   overflow-y: auto;
   padding: 20px;
+  animation: slideIn 0.5s forwards;
+}
+
+/* Adjust width for mobile devices */
+@media (max-width: 640px) {
+  .side-panel {
+    width: 100vw;
+    /* Ensures it takes up the full viewport width */
+    padding: 20px 10px;
+    /* Adjust padding as needed */
+  }
+}
+
+/* Slide-in animation */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
 }
 
 .close-btn {
@@ -590,10 +617,9 @@ body {
 }
 
 .subpage-content {
-  padding: 15px 15px;
+  padding: 15px;
   /* Indent text by 5px from both left and right */
 }
-
 
 .side-panel {
   position: fixed;
@@ -635,6 +661,16 @@ body {
   position: relative;
 }
 
+@keyframes fillProgress {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: var(--progress-value);
+  }
+}
+
 .incomplete-progress-bar {
   height: 100%;
   width: 5%;
@@ -650,6 +686,19 @@ body {
   /* Ensure the text is bold */
 }
 
+.partial-progress-bar {
+  height: 100%;
+  background-color: #F6E798;
+  border-radius: 10px;
+  text-align: center;
+  color: black;
+  line-height: 20px;
+  font-size: 12px;
+  font-family: 'Cooper BT', serif;
+  font-weight: bold;
+  width: 0;
+  transition: width 2s ease-in-out;
+}
 
 .neural-img {
   width: 100%;
@@ -658,9 +707,8 @@ body {
   /* Add margin-bottom for space below the image */
 }
 
-
 .email-link {
-  color: blue;
+  color: navy;
   text-decoration: underline;
   font-family: 'Cooper BT', serif;
 }
@@ -710,6 +758,69 @@ body {
   top: 0;
 }
 
+.subpage-text-date {
+  font-family: 'CooperLtBT-Italic', sans-serif;
+  font-size: 0.8rem;
+}
+
+/* Timeline Styles */
+.timeline {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  padding-left: 20px;
+  /* Adjust padding for positioning */
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 20px;
+  padding-left: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.timeline-item:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0px;
+  width: 2px;
+  height: 50px;
+  background: black;
+}
+
+.timeline-arrow {
+  margin-right: 5px;
+  font-family: 'Cooper BT', serif;
+  font-size: 1rem;
+  color: black;
+  margin-left: -15px;
+  /* Move the arrow closer to the line */
+}
+
+.timeline-content {
+  font-family: 'Cooper BT', serif;
+  font-size: 1rem;
+  color: black;
+}
+
+.timeline-item:last-child:before {
+  top: -27px;
+  /* Extend the line upward */
+  bottom: -20px;
+  /* Extend the line downward */
+}
+
+.subpage-link {
+  text-decoration: underline;
+  color: navy;
+  /* Or any other color you prefer */
+  font-family: 'Cooper BT', serif;
+  font-weight: bold;
+}
 
 /* OTHER */
 /* General adjustments for mobile */
