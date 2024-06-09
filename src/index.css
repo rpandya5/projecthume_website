@@ -128,8 +128,10 @@ body {
   color: white;
   padding: 10px;
   pointer-events: auto;
-  width: calc(100vw - 40px);
-  max-width: 600px;
+  width: calc(100vw - 20px);
+  /* Adjusted width */
+  max-width: 800px;
+  /* Increased max-width */
   height: auto;
   background-color: transparent;
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -192,6 +194,36 @@ body {
   .popup-window-custom {
     width: 20%;
     height: auto;
+  }
+}
+
+/* ACTUAL UPDATED SMALL WINDOW DESIGN */
+.green-spage {
+  width: 120%;
+  max-width: 800px;
+  margin: 0 auto;
+  /* Center the window */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1024px) {
+  .green-spage {
+    width: 90%;
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 768px) {
+  .green-spage {
+    width: 95%;
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 640px) {
+  .green-spage {
+    width: 100%;
+    max-width: 500px;
   }
 }
 
@@ -495,41 +527,31 @@ body {
 }
 
 /* buttons */
-.learn-more-btn {
-  font-family: 'Cooper BT', serif;
-  font-size: 1.25rem;
-  background-color: white;
-  border: 2px solid black;
-  border-radius: 8px;
-  padding: 0.5rem 1rem;
+.expand-btn {
+  background-color: transparent;
+  border: none;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  padding: 0;
+  text-decoration: underline;
+  text-align: center;
+  display: block;
+  margin: 16px auto 0;
 }
 
-.learn-more-btn:hover {
-  background-color: #f0f0f0;
-  transform: scale(1.05);
+.expand-btn:hover {
+  animation: blink 0.2s linear 1;
 }
 
-.learn-more-btn::before,
-.learn-more-btn::after {
-  content: "";
-  position: absolute;
-  border: 1px solid black;
-}
+@keyframes blink {
 
-.learn-more-btn::before {
-  top: -4px;
-  left: -4px;
-  right: -4px;
-  bottom: -4px;
-}
+  0%,
+  100% {
+    opacity: 1;
+  }
 
-.learn-more-btn::after {
-  top: -8px;
-  left: -8px;
-  right: -8px;
-  bottom: -8px;
+  50% {
+    opacity: 0;
+  }
 }
 
 /* OTHER */
