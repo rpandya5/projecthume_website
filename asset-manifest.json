@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/projecthume_website/static/css/main.cefc1774.css",
-    "main.js": "/projecthume_website/static/js/main.e2d6100c.js",
-    "static/js/453.bf8c59e4.chunk.js": "/projecthume_website/static/js/453.bf8c59e4.chunk.js",
-    "static/media/human-figure.png": "/projecthume_website/static/media/human-figure.10e222eb1d31fdd2ee4e.png",
-    "static/media/neural_img.png": "/projecthume_website/static/media/neural_img.b62fa787e92d6a11737a.png",
-    "static/media/voice_img.png": "/projecthume_website/static/media/voice_img.a75bb3fdb3aaffa0b93d.png",
-    "static/media/musc_img.png": "/projecthume_website/static/media/musc_img.40536313d4ca3fc7ee46.png",
-    "static/media/skin_img.png": "/projecthume_website/static/media/skin_img.5962dd9afef254fce7d2.png",
-    "static/media/CooperLtBT-Italic.ttf": "/projecthume_website/static/media/CooperLtBT-Italic.99af190b7b1db0c278e5.ttf",
-    "static/media/CooperBT.ttf": "/projecthume_website/static/media/CooperBT.3bf0f93c72c227da7a36.ttf",
-    "static/media/CooperMdBT-Regular.ttf": "/projecthume_website/static/media/CooperMdBT-Regular.a2636a78e674e23ff8f4.ttf",
-    "static/media/TheSeasons.ttf": "/projecthume_website/static/media/TheSeasons.65b96296c27b4755fc97.ttf",
-    "index.html": "/projecthume_website/index.html",
-    "main.cefc1774.css.map": "/projecthume_website/static/css/main.cefc1774.css.map",
-    "main.e2d6100c.js.map": "/projecthume_website/static/js/main.e2d6100c.js.map",
-    "453.bf8c59e4.chunk.js.map": "/projecthume_website/static/js/453.bf8c59e4.chunk.js.map"
+    "main.css": "/static/css/main.87b47704.css",
+    "main.js": "/static/js/main.1ec9831d.js",
+    "static/js/453.bf8c59e4.chunk.js": "/static/js/453.bf8c59e4.chunk.js",
+    "static/media/human-figure.png": "/static/media/human-figure.10e222eb1d31fdd2ee4e.png",
+    "static/media/neural_img.png": "/static/media/neural_img.b62fa787e92d6a11737a.png",
+    "static/media/voice_img.png": "/static/media/voice_img.a75bb3fdb3aaffa0b93d.png",
+    "static/media/musc_img.png": "/static/media/musc_img.40536313d4ca3fc7ee46.png",
+    "static/media/skin_img.png": "/static/media/skin_img.5962dd9afef254fce7d2.png",
+    "static/media/CooperLtBT-Italic.ttf": "/static/media/CooperLtBT-Italic.99af190b7b1db0c278e5.ttf",
+    "static/media/CooperBT.ttf": "/static/media/CooperBT.3bf0f93c72c227da7a36.ttf",
+    "static/media/CooperMdBT-Regular.ttf": "/static/media/CooperMdBT-Regular.a2636a78e674e23ff8f4.ttf",
+    "static/media/TheSeasons.ttf": "/static/media/TheSeasons.65b96296c27b4755fc97.ttf",
+    "index.html": "/index.html",
+    "main.87b47704.css.map": "/static/css/main.87b47704.css.map",
+    "main.1ec9831d.js.map": "/static/js/main.1ec9831d.js.map",
+    "453.bf8c59e4.chunk.js.map": "/static/js/453.bf8c59e4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cefc1774.css",
-    "static/js/main.e2d6100c.js"
+    "static/css/main.87b47704.css",
+    "static/js/main.1ec9831d.js"
   ]
 }
