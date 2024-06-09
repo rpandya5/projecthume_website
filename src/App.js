@@ -179,7 +179,7 @@ function App() {
           <span className="body-text-bold">Currently working on:</span> <span className="body-text">Visual interfaces</span>
         </p>
         <p className="text-lg md:text-xl">
-          <span className="body-text-bold">Last updated:</span> <span className="body-text">June 3, 2024</span>
+          <span className="body-text-bold">Last updated:</span> <span className="body-text">June 8, 2024</span>
         </p>
         <div className="mt-16 flex justify-center relative">
           <img src={humanFigure} alt="Human Figure" className="human-figure" />
