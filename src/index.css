@@ -96,6 +96,17 @@ body {
   transform: scaleX(1);
 }
 
+/* CURRENTLY WORKING ON TEXT*/
+.hoverable-text {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.hoverable-text:hover {
+  color: #E75577;
+}
+
+
 /* HUMAN FIGURE */
 .human-figure-container {
   position: relative;
@@ -125,6 +136,8 @@ body {
   transform: translateX(-50%);
   width: 100%;
   height: 100%;
+  z-index: 3;
+  /* Ensure popup windows are above circles but below areas */
 }
 
 .popup-window {
@@ -140,6 +153,7 @@ body {
   height: auto;
   background-color: transparent;
   transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 3;
 }
 
 .popup-window-container:hover .popup-window {
@@ -296,6 +310,7 @@ body {
   width: 10px;
   height: 10px;
   border-radius: 50%;
+  z-index: 2;
 }
 
 .circle-pink {
@@ -415,6 +430,16 @@ body {
 }
 
 /* AREAS */
+.area-pink,
+.area-green,
+.area-orange,
+.area-red,
+.area-purple,
+.area-blue,
+.area-yellow {
+  z-index: 4;
+}
+
 @media (max-width: 640px) {
   .area-pink {
     top: 0%;
@@ -564,7 +589,7 @@ body {
   position: fixed;
   top: 0;
   right: 0;
-  width: 500px;
+  width: 750px;
   /* Increased width */
   height: 100%;
   background-color: #D5EAEB;
@@ -806,6 +831,30 @@ body {
   /* Or any other color you prefer */
   font-family: 'Cooper BT', serif;
   font-weight: bold;
+}
+
+/* IMG CAROUSEL */
+.side-panel .slick-slide {
+  text-align: center;
+}
+
+.carousel-image {
+  max-width: 100%;
+  margin: 0 auto;
+  border-radius: 15px;
+}
+
+.caption {
+  margin-top: 10px;
+  font-family: 'Cooper BT', serif;
+  font-size: 0.8rem;
+  color: black;
+}
+
+.carousel-container {
+  position: relative;
+  max-width: 90%;
+  margin: 0 auto;
 }
 
 /* OTHER */

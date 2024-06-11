@@ -172,12 +172,20 @@ function App() {
       </header>
 
       <main className="md:pl-16">
-        <p className="text-xl md:text-2xl mb-8 body-text">
-          Hi! I’m Richa, and I’m building a project to interface with every part of your body.
+        <p style={{ fontSize: '1.3rem' }} className="mb-8 body-text">
+          Hi! I’m Richa, and I’m building a project to interface with every part of your body. My goal is to create an <u>open-source directory of low-cost, replicable wearable projects</u>.
         </p>
         <p className="mb-2 text-lg md:text-xl">
-          <span className="body-text-bold">Currently working on:</span> <span className="body-text">Visual interfaces</span>
+          <span className="body-text-bold">Currently working on: </span>
+          <span
+            className="body-text hoverable-text"
+            onClick={() => setCurrentSubpage('green')}
+          >
+            Visual interfaces
+          </span>
         </p>
+
+
         <p className="text-lg md:text-xl">
           <span className="body-text-bold">Last updated:</span> <span className="body-text">June 8, 2024</span>
         </p>
