@@ -1,18 +1,38 @@
 import React, { useEffect } from 'react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import FullScreen from 'react-fullscreen-crossbrowser';
+import image1 from '../assets/yellow1.png';
 
 const YellowSubpage = ({ onClose }) => {
+    const [isFullScreen, setIsFullScreen] = React.useState(false);
+
     useEffect(() => {
         const progressBar = document.querySelector('.partial-progress-bar');
         setTimeout(() => {
-            progressBar.style.width = '10%';
+            progressBar.style.width = '15%';
         }, 100); // delay to ensure the transition is visible
     }, []);
+
+    const settings = {
+        dots: true,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        draggable: true
+    };
+
+    const handleFullScreen = () => {
+        setIsFullScreen(!isFullScreen);
+    };
 
     return (
         <div className="side-panel">
             <button className="close-btn" onClick={onClose}>×</button>
             <div className="subpage-content">
-                <h2 className="subpage-title mb-6 mt-8 text-center">Visual Interfaces</h2>
+                <h2 className="subpage-title mb-6 mt-8 text-center">Biometric Interfaces</h2>
                 <div className="progress-bar">
                     <div className="partial-progress-bar">10%</div>
                 </div>
@@ -24,10 +44,23 @@ const YellowSubpage = ({ onClose }) => {
                     Falls are a leading cause of injury within the elderly, and they result in more than 3 million emergency department visits annually, with over 800,000 hospitalizations and around 38,000 deaths each year in the United States.
                 </p>
 
-                <p className="subpage-text mb-4">
-                    For this project, I'm working with a team to create a system that analyzes gait patterns to detect and predict falls. Our goal is to build a hybrid CNN-LSTM model that accurately predicts falls from accelerometer and gyroscope readings from a wearable device (for the MVP, this would probably be a small microcontroller).
+                <p className="subpage-text mb-6">
+                    For this project, I'm working with a team to create a system that analyzes gait patterns to detect and predict falls. Our goal is to build a <u>hybrid CNN-LSTM model that accurately predicts falls</u> from accelerometer and gyroscope readings from a wearable device.
                 </p>
-                <p className="subpage-text-bold mb-2">Timeline</p>
+
+                <FullScreen isFull={isFullScreen} onChange={handleFullScreen}>
+                    <div className={`carousel-container ${isFullScreen ? 'fullscreen-carousel' : ''}`}>
+                        <Slider {...settings}>
+                            <div>
+                                <img src={image1} alt="Image 1" className="carousel-image" />
+                                <p className="caption">Detecting and predicting falls through a comprehensive pipeline involving sensor data processing, hybrid CNN-LSTM modeling, and real-time emergency notifications.
+                                </p>
+                            </div>
+                        </Slider>
+                    </div>
+                </FullScreen>
+
+                <p className="subpage-text-bold mb-2 mt-6">Timeline</p>
 
                 <div className="timeline">
                     <div className="timeline-item">
